@@ -7,16 +7,25 @@ import React, {useState} from 'react'
     const changeHandler = event => {
         setMember({...member, [event.target.name]: event.target.value})
     }
-    console.log(member)
+
+    
+    //this is the function that will handle the onSubmit event from our form
     const handleSumbit = (event) => {
+        
+        //this prevents the page from refreshing when the submit button is clicked
         event.preventDefault()
+        
+        //?????
         const newMember = {
             ...member,
             id: Date.now
         }
-        console.log(newMember)
+
+        //this adds the info that is in our member state to the memberList from app.js
         props.addNewMember(newMember);
-        // setMember({name: '', email: '', role: ''})
+
+        //this is just to reset the member state back to default
+        setMember({name: '', email: '', role: ''})
     }
 
     return (
@@ -26,7 +35,10 @@ import React, {useState} from 'react'
                 type='text'
                 name='name'
                 placeholder='Enter name here.'
+                //this sets the value of state to whatever is in our input field so that when we input info our state can handle that info
                 value={member.name}
+
+                
                 onChange={changeHandler}
             />
             <label htmlFor='members email'>Email: </label>
