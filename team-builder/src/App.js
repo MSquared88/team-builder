@@ -5,9 +5,9 @@ import Form from './components/Form'
 import './App.css';
 
 function App() {
-  const [membersList, setMembersList] = useState([{name: 'Matthew', email: 'matthew@gmail.com', role: 'Full Stack Web Dev'}])
-  const addNewMember = member => {
-    setMembersList([...membersList, member])
+  const [membersList, setMembersList] = useState([{name: '', email: '', role: ''}])
+  const addNewMember = newMember => {
+    setMembersList([...membersList, newMember])
   }  
   return (
     <div className="App">

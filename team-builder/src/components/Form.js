@@ -21,7 +21,7 @@ import React, {useState} from 'react'
             id: Date.now
         }
 
-        //this adds the info that is in our member state to the memberList from app.js
+        //this adds the info that is in our member state to the memberList from app.js 
         props.addNewMember(newMember);
 
         //this is just to reset the member state back to default
@@ -30,18 +30,19 @@ import React, {useState} from 'react'
 
     return (
         <form onSubmit={event => handleSumbit(event)}>
-            <label htmlFor='members name'>Name:  </label>
+            <label htmlFor='name:'>Name:  </label>
             <input
                 type='text'
                 name='name'
                 placeholder='Enter name here.'
+
                 //this sets the value of state to whatever is in our input field so that when we input info our state can handle that info
                 value={member.name}
 
-                
+
                 onChange={changeHandler}
             />
-            <label htmlFor='members email'>Email: </label>
+            <label htmlFor='email'>Email: </label>
             <input
                 type='email'
                 name='email'
@@ -53,7 +54,7 @@ import React, {useState} from 'react'
             <input
                 type='text'
                 name='role'
-                placeholder='Enter your yole here.'
+                placeholder='Enter your role here.'
                 value={member.role}
                 onChange={changeHandler}
             />
